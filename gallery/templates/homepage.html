@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-{{ block.super }}       <!--function which allows us to use any content that was defined inside a block in the parent template. -->
+<!--{{ block.super }}       function which allows us to use any content that was defined inside a block in the parent template. -->
 
-<h1> The beginning </h1>
+
+<link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+         
+            <div class="bg">
+                <p>My Image</p>   
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
