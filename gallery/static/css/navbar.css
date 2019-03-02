@@ -2,5 +2,8 @@ a:hover{
     text-decoration: none;
 }
 .navitem{
-    margin-left: 45%;
+    margin-left: 35%;
+}
+.icon{
+    margin-left: 80px;
 }
