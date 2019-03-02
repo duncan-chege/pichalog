@@ -18,7 +18,7 @@ from django.contrib import admin        #our admin site
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^gallery/',include('gallery.urls'))       #telling the main urls project file that an application url exists. Include the 'r' to tell python it's a raw string. ^ shows if your url matches up to that point look for the next string
+    url(r'',include('gallery.urls'))       #telling the main urls project file that an application url exists. Include the 'r' to tell python it's a raw string. ^ shows if your url matches up to that point look for the next string
 
 ]
 
