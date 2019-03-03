@@ -12,4 +12,4 @@ def search_results(request):
         search_term = request.GET.get("image")
         searched_images = Image.search_by_category(search_term)
         
-        return render(request, "search.html",{"images": searched_images})       #articles is a key while searched_images is a value
+        return render(request, "search.html",{"images": searched_images})       #images is a key while searched_images is a value
