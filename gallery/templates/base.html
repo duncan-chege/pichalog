@@ -9,7 +9,7 @@
     <title> PichaLog </title>
     <link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
     {% block styles %}
-        {% bootstrap_css %}
+    {% bootstrap_css %}
     {% endblock %}
 
 </head>
@@ -17,14 +17,58 @@
 <body>
     {% include "navbar.html" %}
 
-    {% block content %}
-
     {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% bootstrap_javascript %}
     {% endblock %}
 
-    {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="test-image">
+                    <div class="centered">
+                        <p id="txt"> Search for photos around Kenya under different tags </p>
+
+                        <form class="search-container">
+                            <input type="text" id="search-bar" placeholder="Tags: Sports,Travel, Fashion ...">
+                            <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+                        </form>
+
+                    </div>
+                    <div class="image-overlay">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block content %}
+        <div class="row space">
+            <div class="col-md-12">
+            <p><b> Sample Photos <b></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 image">
+                <img src="/static/fitness.jpeg">
+            </div>
+            <div class="col-md-4 image">
+                <img src="/static/food.jpg">
+            </div>
+            <div class="col-md-4 image">
+                <img src="/static/travel.jpeg">
+            </div>
+        </div>
+
+        {% endblock %}
+
+    </div>
+
+
 </body>
 
 </html>

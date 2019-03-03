@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 from . import views     #access our views
 
 urlpatterns=[
-    url('^$', views.home_page, name='home_page')        #use of carets. $- anything before the url s considered
+    url('^$', views.base, name='base'),        #use of carets. $- anything before the url s considered
+    # url(r'^search/', views.display_images, name='display_images') 
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

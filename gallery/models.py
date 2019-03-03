@@ -13,6 +13,9 @@ class Category(models.Model):
     def __str__(self):
         return self.cname
 
+    class Meta:     #Meta subclass specifies model-specific options. This helps in ordering data
+        verbose_name_plural = 'Categories'
+
 class Image(models.Model):
     name = models.CharField(max_length =30)
     description = models.CharField(max_length =50)

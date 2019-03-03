@@ -54,4 +54,15 @@
     height: 75px;
     top: -62px;
   }
-  
+  .space{
+    margin-top: 20px;
+  }
+  .image{
+    width: 100px;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 5px;
+  }
+    .image img {
+      width: 100%;
+  }
