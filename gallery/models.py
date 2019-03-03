@@ -7,3 +7,19 @@ class Image(models.Model):
 
     def __str__(self):
         return self.name
+
+class Location(models.Model):
+    lname = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.lname
+
+class Category(models.Model):
+    cname = models.CharField(max_length =30)
+
+    def __str__(self):
+        return self.cname
+
+
+
+
