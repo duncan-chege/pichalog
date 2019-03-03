@@ -7,3 +7,7 @@ def base(request):
 def display_images(request):
     return render(request, 'display_images.html')
 
+def search_results(request):
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = 

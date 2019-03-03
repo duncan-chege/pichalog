@@ -7,7 +7,7 @@ from . import views     #access our views
 
 urlpatterns=[
     url('^$', views.base, name='base'),        #use of carets. $- anything before the url s considered
-    # url(r'^search/', views.display_images, name='display_images') 
+    url(r'^search/', views.search_results, name='search_results') 
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
