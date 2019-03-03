@@ -4,7 +4,6 @@
 {% block content %}
 <!--{{ block.super }}       function which allows us to use any content that was defined inside a block in the parent template. -->
 
-
 <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
 
 <div class="container">
@@ -13,8 +12,13 @@
          
                 <div class="test-image">
                     <div class="centered">
-                        <p> Welcome to Pichalog </p>
-                        <p> Enter a location to
+                        <p id="txt"> Search for photos around Kenya under different tags </p>
+
+                        <form class="search-container">
+                            <input type="text" id="search-bar" placeholder="Tags: Sports,Travel, Fashion ...">
+                            <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+                        </form>
+
                     </div>
                     <div class="image-overlay">
                     </div>
