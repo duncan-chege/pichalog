@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from . import views     #access our views
 
 urlpatterns=[
-    url('^$', views.base, name='base'),        #use of carets. $- anything before the url s considered
+    url('^$', views.initial, name='initial'),        #use of carets. $- anything before the url s considered
     url(r'^search/', views.search_results, name='search_results') 
 ]
 if settings.DEBUG:

@@ -22,15 +22,14 @@ class Category(models.Model):
 class Image(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='photos/')
-    location = models.ForeignKey(Location)
-    category = models.ManyToManyField(Category)
+    image_path = models.ImageField(upload_to='photos/')
+    image_location = models.ForeignKey(Location)
+    image_category = models.ForeignKey(Category)
 
     def __str__(self):
         return self.name
 
     @classmethod
     def search_by_category(cls,search_term):
-        theimage = cls.objects.filter(category__icontains=search_term)
-        return theimage
-  
+        search_result = cls.objects.filter(image_category__cname__icontains=search_term)
+        return search_result

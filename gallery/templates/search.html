@@ -2,22 +2,28 @@
 {% load static %}
 
 {% block content %}
-{{ block.super }} <!--function which allows us to use any content that was defined inside a block in the parent template.-->
+{{ block.super }}
+<!--function which allows us to use any content that was defined inside a block in the parent template.-->
 
 <link rel="stylesheet" href="{% static 'css/search.css' %}">
 
-
-    <div class="row">
-            {% for oneimage in images %}
-            <div class="col-md-4 image">
-                <img src="{{oneimage.image_image.url}}" alt="searched Image">
-            </div>
-            {% empty %}
-            <div class="col-md-4">
-              <p> No image under that category available</p>
-            </div>   
-            {% endfor %}         
-    </div>
+<!-- Masonry based layouts for aligning images: Pinterest -->
 
 
-{% endblock %} 
+<div class="col-md-12">
+  <p><b>{{message}}</b></p>
+</div>
+
+<div class="masonry">
+  <div class="item">
+  {% for image in all_images %}
+
+  <img src="{{image.image_path.url}}" alt="displayed Image">
+
+  {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock %}
