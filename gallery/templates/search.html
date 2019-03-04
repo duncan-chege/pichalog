@@ -5,25 +5,38 @@
 {{ block.super }}
 <!--function which allows us to use any content that was defined inside a block in the parent template.-->
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="{% static 'css/search.css' %}">
 
 <!-- Masonry based layouts for aligning images: Pinterest -->
 
 
-<div class="col-md-12">
-  <p><b>{{message}}</b></p>
-</div>
+  <div class="row">
 
-<div class="masonry">
-  <div class="item">
-  {% for image in all_images %}
+  <div class="col-md-12">
+    <p><b>{{message}}</b></p>
+  </div>
 
-  <img src="{{image.image_path.url}}" alt="displayed Image">
+  <div class="col-md-12">
+  <div class="my_masonry">
+    {% for image in all_images %}
+    <div class="my_item">
 
-  {% endfor %}
+      <img src="{{image.image_path.url}}" style="cursor:zoom-in" alt="selectedImage" onclick="document.getElementById('mymodal').style.display='block'">
+      <div id="mymodal" class="w3-modal" onclick="this.style.display='none' ">
+        
+        <div class="w3-modal-content w3-animate-zoom">
+            <img src="{{image.image_path.url}}" style="width: 100%" id="{{image.id}}">
+            <p><b>{{image.name}}</b> - {{image.description}}</p>
+            <p> Shot in {{image.image_location}}</p>
+        </div>
+
+    </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
 
-
+</div>
 
 {% endblock %}
