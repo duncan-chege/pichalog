@@ -9,12 +9,7 @@ class ImageTestClass(TestCase):
         self.new_cname.save_category()
         self.new_image=Image(id=1 , name="athlete" , description="Record winner" , image_path="media/photos/athelete.jpg" , image_location=self.new_lname , image_category=self.new_cname)
 
-    def tearDown(self):
-        Category.objects.all().delete()
-        Location.objects.all().delete()
-        Image.objects.all().delete()
-
-    def test_is_instance(self):
+    def test_is_instance(self):     #Testing instance to confirm that the object is being instantiated correctly
         self.assertTrue(isinstance(self.new_image,Image))
         self.assertTrue(isinstance(self.new_cname,Category))
         self.assertTrue(isinstance(self.new_lname,Location))
@@ -24,7 +19,12 @@ class ImageTestClass(TestCase):
         all_the_objects = Image.objects.all()
         self.assertTrue(len(all_the_objects)>0)
 
-    def test_filter_by_location(self):
+    def test_get_image_by_id(self):
         self.new_image.save_image()
-        get_specific_image = Location.objects.get(lname="Nairobi")
-        self.assertTrue(get_specific_image.lname=="Nairobi")
+        retrieved_image=Image.get_image_by_id(1)
+        self.assertEqual(retrieved_image.id,1)
+
+    def tearDown(self):
+        Category.objects.all().delete()
+        Location.objects.all().delete()
+        Image.objects.all().delete()
